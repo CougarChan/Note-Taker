@@ -1,8 +1,12 @@
+//CONST REQUIRED FOR THE FILES
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+
+//Our API ROUTES WHICH WILL REQUIRE THE CERTAIN FILES
 const apiRoutes = require('./routes/api')
 const htmlRoutes = require('./routes/html')
 
