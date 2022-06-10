@@ -15,11 +15,13 @@ const htmlRoutes = require('./routes/html')
 
 
 // APP USE
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+pp.use(express.json());
 app.use('/', htmlRoutes)
 app.use('/api', apiRoutes)
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+
+
 
 //APP LISTEN
 app.listen(PORT, () => {

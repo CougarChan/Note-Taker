@@ -12,10 +12,10 @@ router.get("/notes", (req, res) => {
   res.send(notes);
 });
 
-router.post("/notes", (req, res) => {
-  var request = req.body;
-  var array = notes;
-  var random = Math.random();
+    router.post("/notes", (req, res) => {
+    var request = req.body;
+    var array = notes;
+    var random = Math.random();
   request.id =
     (array.length * random).toString().slice(2) || random.toString().slice(2);
   array.push(request);
@@ -24,6 +24,9 @@ router.post("/notes", (req, res) => {
     JSON.stringify(array, null, 2)
   );
 });
+
+
+
 
 
 module.exports = router;
