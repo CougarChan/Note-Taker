@@ -30,31 +30,6 @@ router.post("/notes", (req, res) => {
  the proper results
 */
 
-router.delete("/notes/:id", (req, res) => {
-  const deleteId = req.params.id;
-  var newArray = [];
 
-  fs.readFile("./db/db.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      const db = JSON.parse(data);
-      newArray = notes.filter((note) => {
-        if (note.id !== deleteId) {
-          return true;
-        }
-      });
-      console.log(newArray)
-      fs.writeFile(
-        path.join(__dirname, "../../db/db.json"),
-        JSON.stringify(newArray, null, 2),
-        (err) => {
-          if (err) throw err;
-          else res.status(200);
-        }
-      );
-    }
-  });
-});
 
 module.exports = router;
